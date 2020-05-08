@@ -13,7 +13,7 @@ services:
             - "6379:6379"
     celery:
         build: .
-        working_dir: ./app
+        working_dir: app
         command: celery -A app.celery worker
         depends_on:
             - redis
