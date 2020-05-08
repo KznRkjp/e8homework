@@ -36,8 +36,8 @@ celery = make_celery(app)
 #celery -A your_application.celery worker
 
 db = SQLAlchemy(app)
-celery = Celery(app.name, broker=app.config['CELERY_BROKER_URL'])
-celery.conf.update(app.config)
+#celery = Celery(app.name, broker=app.config['CELERY_BROKER_URL'])
+#celery.conf.update(app.config)
 
 
 class Results(db.Model):
