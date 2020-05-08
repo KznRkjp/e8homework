@@ -1,0 +1,28 @@
+
+worker: Hitting Ctrl+C again will terminate all running tasks!
+
+worker: Warm shutdown (MainProcess)
+
+worker: Cold shutdown (MainProcess)
+
+worker: Cold shutdown (MainProcess)
+ 
+ -------------- celery@M-350U2B v4.4.2 (cliffs)
+--- ***** ----- 
+-- ******* ---- Linux-5.4.0-29-generic-x86_64-with-glibc2.29 2020-05-08 22:08:28
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         app:0x7fe846714cd0
+- ** ---------- .> transport:   redis://localhost:6379/0
+- ** ---------- .> results:     redis://localhost:6379/0
+- *** --- * --- .> concurrency: 4 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[2020-05-08 22:12:15,102: WARNING/MainProcess] /home/michael/Venv/e8v2venv/lib/python3.8/site-packages/celery/app/control.py:52: DuplicateNodenameWarning: Received multiple replies from node name: celery@M-350U2B.
+Please make sure you give each node a unique nodename using
+the celery worker `-n` option.
+  warnings.warn(DuplicateNodenameWarning(
