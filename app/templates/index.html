@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>E8 homework - sushiy ad</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <br>
+  <form method="GET" action="/add-url">
+  <label for="url">Add URL to list:</label>
+  <input type="text" name="url">
+  <input type="submit">
+</form>
+    {% if num %}
+      <h2>Word "python" was found on {{path}} <b>{{num}} </b> times</h2>
+
+    {% else %}
+
+    {% endif %}
+    {% if search_results %}
+      <table class="table">
+        <thead>
+          <tr>
+            <td>Path</td>
+            <td>Time added</td>
+            <td>Status</td>
+            <td>HTTP status</td>
+            <td>Times encountered "python"</td>
+          </tr>
+
+        </thead>
+      {% for result in search_results %}
+        <tr>
+          <td><a href="{{result.address}}" target="_blank">{{result.address}}</a></td>
+          <td>{{result.timestamp.strftime('%H:%M:%S %d/%m/%y')}}</td>
+          <td>{{result.task_status}}</td>
+          <td>{{result.http_status}}</td>
+
+          {% for iresult in inspect_results %}
+
+            {% if result._id == iresult.taskid %}
+            <td>{{iresult.words_count}}</td>
+            {% endif %}
+          {% endfor %}
+
+        </tr>
+
+      {% endfor %}
+    </table>
+    {% else %}
+
+    {% endif %}
+</div>
+
+</body>
+</html>
