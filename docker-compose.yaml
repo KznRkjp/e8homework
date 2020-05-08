@@ -2,7 +2,7 @@ version: '3.7'
 services:
     flask:
         build: .
-        command: python /app/app.py
+        command: python /app.py
         ports:
             - "5000:5000"
         depends_on:
@@ -13,7 +13,7 @@ services:
             - "6379:6379"
     celery:
         build: .
-        command: celery -A /app/app.celery worker
+        command: celery -A /app.celery worker
         depends_on:
             - redis
             - flask
