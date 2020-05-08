@@ -13,7 +13,7 @@ services:
             - "6379:6379"
     celery:
         build: .
-        command: cd app && celery -A app.celery worker
+        command: cd \app && celery -A app.celery worker
         depends_on:
             - redis
             - flask
