@@ -10,8 +10,8 @@ from celery import Celery
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-#app.config['CELERY_BROKER_URL'] = 'redis://192.168.1.79:6379'
-#app.config['CELERY_RESULT_BACKEND'] = 'redis://192.168.1.79:6379'
+# app.config['CELERY_BROKER_URL'] = 'redis://192.168.1.79:6379'
+# app.config['CELERY_RESULT_BACKEND'] = 'redis://192.168.1.79:6379'
 app.config['CELERY_BROKER_URL'] = 'redis://redis:6379'
 app.config['CELERY_RESULT_BACKEND'] = 'redis://redis:6379'
 
@@ -102,4 +102,4 @@ def add_url():
     return redirect('/')
 
 if __name__=='__main__':
-    app.run(debug=False, host='0.0.0.0', port = 5000)
+    app.run(debug=True, host='0.0.0.0', port = 5000)
