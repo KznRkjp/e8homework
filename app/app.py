@@ -67,6 +67,8 @@ db.create_all()
 @app.route('/')
 def hello_world():
     search_results = Tasks.query.all()
+    for task in search_results:
+        print(task._id, " ", task.address)
     inspect_results = Results.query.all()
     return render_template('index.html', search_results = search_results, inspect_results = inspect_results)
 
